@@ -1,0 +1,32 @@
+//Container With Most Water -leetcode -arrays-medium
+
+int height[] = new int[] {2,1,1,1};
+		 int a=0,b=0,pos1=0,pos2=0,result=0;
+		 for(int i=0;i<height.length;i++) {
+			 for(int j=i+1;j<height.length;j++) {
+				 if(height[i] ==height[j]) {
+					System.out.println(height[i]);
+				 }
+			 }
+		 }
+			for(int i=0;i<height.length/2;i++){
+				if(height[i]>height[i+1]) {
+//					System.out.println(height[i]);
+					a=height[i];
+					pos1 = i;
+					break;
+				}
+			}for(int i=height.length-1;i>0;i--){
+				if(height[i]>height[i-1]) {
+					//System.out.println(height[i]);
+					b=height[i];
+					pos2 =i;
+					break;
+				}
+			}
+			if(a<b) {result = (pos2-pos1)*a;}
+			else if(a>b) {result =(pos2-pos1)*b;}
+	        else if(pos1 ==pos2){result =pos1*a;}
+		//System.out.println(result);
+		 
+		
