@@ -1,0 +1,36 @@
+//Problem of  median of  Two  sorted  array-leetcode-arrays-Hard
+
+
+class Solution {
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+       float val = 0.0f;
+		int  x = 0;
+        float result =0.0f;
+		int length = nums1.length + nums2.length;
+		int c[] = new int[length];
+		if(nums1.length>=0 || nums1.length<=1000 || nums2.length>=0||nums2.length<=1000
+          || nums1.length+ nums2.length<=1 || nums1.length+nums2.length<=2000){
+          
+        
+		 System.arraycopy(nums1, 0, c, 0, nums1.length);
+		 System.arraycopy(nums2, 0, c,nums1.length , nums2.length);
+		 Arrays.sort(c);
+	      System.out.println(Arrays.toString(c));
+	      if(c.length%2 ==0) {
+	    	  x =c.length/2;
+//	    	  val =(c[x-1] + c[x])/2;
+	    	  System.out.println(c[x-1]);
+	    	  System.out.println(c[x]);
+	    	  val = (c[x-1]+c[x]);
+	    	   result = (float)val;
+	    	 result =  result/2;
+	       }
+	      else if(c.length%2!=0) {
+	    	  x=(c.length+1)/2;
+	    	  val = c[x-1];
+	    	  result = (float)val;
+	    	  
+	      }} 
+        return result;
+    }
+}
